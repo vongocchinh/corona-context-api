@@ -1,0 +1,163 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    padding-top: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    min-height: 100vh;
+    width: 80%;
+}
+.header-app{
+    width: 100%;
+    height: 75px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header-app img{
+    width: 200px;
+    height: 100%;
+}
+.card-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+.card{
+    width: 70%;
+    height: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   
+}
+
+.card-app{
+    width: 350px;
+    height: 100%;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-bottom: 5px solid blue;
+}
+.card-app:nth-child(3){
+    border-bottom: 5px solid #CC0A0A;
+}
+.card-app:nth-child(2){
+    border-bottom: 5px solid #0ACC0A;
+}
+.CardActionArea{
+    width: 100%;
+    height: 100%;
+}
+
+.ld{
+    text-align: center;
+}
+
+@media only screen and (max-width: 1000px) {
+    .card{
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+       
+    }
+  }
+  @media only screen and (max-width: 800px) {
+    .card{
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+       
+    }
+  }
+
+  @media only screen and (max-width: 700px) {
+    .container{
+        padding-top: 20px;
+        margin-left: 5%;
+        margin-right: 5%;
+        min-height: 100vh;
+        width: 90%;
+    }
+  }
+  
+  @media only screen and (max-width: 700px) {
+    .container{
+        padding-top: 20px;
+        margin-left: 5%;
+        margin-right: 5%;
+        min-height: 100vh;
+        width: 90%;
+    }
+    .card{
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       flex-direction: column;
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    .container{
+        padding-top: 20px;
+        margin-left: 5%;
+        margin-right: 5%;
+        min-height: 100vh;
+        width: 90%;
+    }
+    .card-app{
+        width: 300px;
+        height: 100%;
+        margin: 10px;
+        border-bottom: 5px solid blue;
+    }
+  }
+  
+
+  .chart-container{
+      width: 100%;
+      height: auto;
+      margin-top: 40px;
+      margin-bottom: 50px;
+  }
+
+  .option-chart{
+      width: 100%;
+      height: 35px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: center;
+  }
+
+  .option-chart-item{
+      width: 200px;
+
+  }
+
+  .option-chart select{
+      width: 200px;
+      height: 30px;
+      border-radius: 5px;
+      /* background-color: #0ACC0A; */
+      border: 2px solid #1E2F3A;
+      color: #1E2F3A;
+      font-size: 14px;
+      cursor: pointer;
+      font-weight: 600;
+  }
