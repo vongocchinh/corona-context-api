@@ -49,7 +49,7 @@ export const Chart = ({getAll, optionCounty, dailyData, country, setOption }) =>
   const lineChart2 = optionCounty[0] ? (
     <Line
       data={{
-        labels: optionCounty.map((data) => data.Date),
+        labels: optionCounty.map((data) => (new Date(data.Date)).toLocaleString().split(',')[0]),
         datasets: [
           {
             data: optionCounty.map((data) => data.Confirmed),
