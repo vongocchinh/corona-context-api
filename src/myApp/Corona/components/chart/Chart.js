@@ -16,6 +16,8 @@ export const Chart = ({getAll, optionCounty, dailyData, country, setOption }) =>
     }
   };
 
+  optionCounty=optionCounty&&optionCounty.slice(optionCounty.length-14,optionCounty.length);
+
   const lineChart = dailyData&&dailyData[0] ? (
     <Line
       data={{
@@ -55,21 +57,21 @@ export const Chart = ({getAll, optionCounty, dailyData, country, setOption }) =>
             data: optionCounty.map((data) => data.Confirmed),
             label: "Lây Nhiễm",
             borderColor: "#3333ff",
-            fill: true,
+            fill: false,
           },
           {
             data: optionCounty.map((data) => data.Deaths),
             label: "Tử Vong",
             borderColor: "red",
             backgroundColor: "rgba(255, 0, 0, 0.5)",
-            fill: true,
+            fill: false,
           },
           {
             data: optionCounty.map((data) => data.Recovered),
             label: "Hồi Phục",
             borderColor: "green",
             backgroundColor: "rgba(0, 255, 0, 0.5)",
-            fill: true,
+            fill: false,
           },
         ],
       }}
