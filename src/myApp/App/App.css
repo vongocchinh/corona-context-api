@@ -182,7 +182,12 @@
     cursor: pointer;
     font-weight: 600;
 }
-
+.chart-model{
+    width: 100%;
+    height: auto;
+    background-color: #1E2F3A;
+    padding: 10px;
+}
 .vn-container {
     width: 100%;
     height: auto;
@@ -203,6 +208,7 @@
     width: 700px;
     height: auto;
     background-color: #1E2F3A;
+    padding: 10px;
 }
 
 .card-app-vn {

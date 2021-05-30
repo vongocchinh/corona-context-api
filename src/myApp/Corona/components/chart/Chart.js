@@ -91,7 +91,9 @@ export const Chart = ({getAll, optionCounty, dailyData, country, setOption }) =>
             })}
         </select>
       </div>
+      <div className="chart-model">
       {show ? lineChart2 : lineChart}
+      </div>
     </div>
   );
 };
