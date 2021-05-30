@@ -1,6 +1,12 @@
 //
-import { GET_CORONA_ALL, GET_CORONA_ALL_OPTION, GET_CORONA_DETAIL_ALL } from "./../constant/corona";
-import { GET_CORONA_COUNTRY } from './../constant/corona';
+import {
+  GET_CORONA_ALL,
+  GET_CORONA_ALL_OPTION,
+  GET_CORONA_ARR_VN,
+  GET_CORONA_DETAIL_ALL,
+} from "./../constant/corona";
+import { GET_CORONA_COUNTRY } from "./../constant/corona";
+import { GET_CORONA_VN } from "./../constant/corona";
 
 export const reducer = (state, action) => {
   // var {
@@ -19,7 +25,6 @@ export const reducer = (state, action) => {
       };
       return state;
     case GET_CORONA_ALL_OPTION:
- 
       state = {
         ...state,
         stores: {
@@ -27,21 +32,31 @@ export const reducer = (state, action) => {
         },
       };
       return state;
-      case GET_CORONA_COUNTRY:
- 
+    case GET_CORONA_COUNTRY:
+      state = {
+        ...state,
+        country: action.payload,
+      };
+      return state;
+
+    case GET_CORONA_DETAIL_ALL:
+      state = {
+        ...state,
+        detail: action.payload,
+      };
+      return state;
+    case GET_CORONA_VN:
+      state = {
+        ...state,
+        DATA_VN: action.payload,
+      };
+      return state;
+      case GET_CORONA_ARR_VN:
         state = {
           ...state,
-          country:action.payload
+          DATA_ARR_VN: action.payload,
         };
         return state;
-
-        case GET_CORONA_DETAIL_ALL:
- 
-          state = {
-            ...state,
-            detail:action.payload
-          };
-          return state;
     default:
       return state;
   }

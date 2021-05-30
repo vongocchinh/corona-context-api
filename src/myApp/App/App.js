@@ -4,11 +4,11 @@ import { ContainerCorona } from './../Corona/Container.corona';
 
 function App() {
   return (
-    <>
+    <div className="bg">
       <CoronaProvider>
         <ContainerCorona/>
       </CoronaProvider>
-    </>
+    </div>
   );
 }
 

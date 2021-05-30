@@ -9,8 +9,11 @@ import {
   fetchGet,
   fetchGetCountryOption,
   fetchGetDaily,
+  fetchAPiVN,
+  fetchArrVN
 } from "./../../Api/index";
 import { fetchGetCountry } from "./../../Api/index";
+import { VietNam } from "./vietnam/vietnam";
 
 export const IndexCorona = () => {
   // const [optionCounty, setOptionCounty] = useState([]);
@@ -20,10 +23,12 @@ export const IndexCorona = () => {
       store: { item },
       stores: { dataOption },
       country,
-      detail
+      detail,
+      DATA_VN,
+      DATA_ARR_VN
     },
     dispatch,
-  } = useContext(CoronaContext);  
+  } = useContext(CoronaContext);
   useEffect(async () => {
     const data = await fetchGet();
 
@@ -48,6 +53,25 @@ export const IndexCorona = () => {
     });
   }, [1]);
   useEffect(async () => {
+    const data = await fetchAPiVN();
+
+    dispatch({
+      type: types.GET_CORONA_VN,
+      payload: data,
+    });
+  }, [1]);
+
+  useEffect(async () => {
+    const data = await fetchArrVN();
+
+    dispatch({
+      type: types.GET_CORONA_ARR_VN,
+      payload: data,
+    });
+  }, [1]);
+
+
+  useEffect(async () => {
     if (option) {
       const data = await fetchGetCountryOption(option);
       dispatch({
@@ -61,17 +85,18 @@ export const IndexCorona = () => {
     setOption(e);
   };
 
-  const getAll=async()=>{
+  const getAll = async () => {
     const data = await fetchGetDaily();
     dispatch({
       type: types.GET_CORONA_DETAIL_ALL,
       payload: data,
     });
-  }
+  };
   return (
-    <>
+    <div>
       <Header />
       <Cards item={item} />
+      <VietNam item={DATA_VN} arr={DATA_ARR_VN} />
       <Chart
         optionCounty={dataOption}
         setOption={setOptions}
@@ -79,7 +104,7 @@ export const IndexCorona = () => {
         dailyData={detail}
         getAll={getAll}
       />
-    </>
+    </div>
   );
 };
 

@@ -13,17 +13,17 @@ export const Cards = ({ item }) => {
         <Card className="card-app">
           <CardActionArea className="CardActionArea">
             <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">
+              <Typography gutterBottom variant="h6" component="h4">
                Tổng Số Ca Lây Nhiễm
               </Typography>
               <Typography variant="h6" component="h6">
-                {item.global ? FORMAT_CURRENT(item.global.TotalConfirmed) : <p>...</p>}
+                {item.cases ? FORMAT_CURRENT(item.cases) : <p>...</p>}
               </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
-                {new Date(item.date).toDateString()}
+                {new Date(item.updated).toDateString()}
               </Typography>
               <Typography variant="body2" component="h4">
-              Số Ca Lây Nhiễm Mới: {item.global&&FORMAT_CURRENT(item.global.NewConfirmed)}
+              Số Ca Lây Nhiễm Hôm Nay: {item.todayCases&&FORMAT_CURRENT(item.todayCases)}
               </Typography>
             </CardContent>
           </CardActionArea>
@@ -31,17 +31,17 @@ export const Cards = ({ item }) => {
         <Card className="card-app">
           <CardActionArea className="CardActionArea">
             <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">
+              <Typography gutterBottom variant="h6" component="h4">
               Tổng Số Ca Phục Hồi
               </Typography>
               <Typography variant="h6" component="h6">
-                {item.global ? FORMAT_CURRENT(item.global.TotalRecovered) : <p>...</p>}
+                {item.recovered ? FORMAT_CURRENT(item.recovered) : <p>...</p>}
               </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
-                {new Date(item.date).toDateString()}
+                {new Date(item.updated).toDateString()}
               </Typography>
               <Typography variant="body2" component="p">
-              Số Ca Phục Hồi Mới : {item.global&&FORMAT_CURRENT(item.global.NewRecovered)}
+              Số Ca Phục Hồi Mới : {item.todayRecovered&&FORMAT_CURRENT(item.todayRecovered)}
               </Typography>
             </CardContent>
           </CardActionArea>
@@ -49,17 +49,35 @@ export const Cards = ({ item }) => {
         <Card className="card-app">
           <CardActionArea className="CardActionArea">
             <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">
+              <Typography gutterBottom variant="h6" component="h4">
               Tổng Số Người Chết
               </Typography>
               <Typography variant="h6" component="h6">
-                {item.global ? FORMAT_CURRENT(item.global.TotalDeaths ): <p>...</p>}
+                {item.deaths ? FORMAT_CURRENT(item.deaths ): <p>...</p>}
               </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
-                {new Date(item.date).toDateString()}
+                {new Date(item.updated).toDateString()}
               </Typography>
               <Typography variant="body2" component="h4">
-               Số Người Chết Mới : {item.global&&FORMAT_CURRENT(item.global.NewDeaths)}
+               Số Người Chết Mới : {item.todayDeaths&&FORMAT_CURRENT(item.todayDeaths)}
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+        </Card>
+        <Card className="card-app">
+          <CardActionArea className="CardActionArea">
+            <CardContent>
+              <Typography gutterBottom variant="h6" component="h4">
+              Tổng Dân Số Thế Giới  
+              </Typography>
+              <Typography variant="h6" component="h6">
+                {item.population ? FORMAT_CURRENT(item.population ): <p>...</p>}
+              </Typography>
+              <Typography variant="body2" component="h4">
+               Số Quốc Gia Ảnh Hưởng : {item.affectedCountries&&FORMAT_CURRENT(item.affectedCountries)}
+              </Typography>
+              <Typography variant="body2" component="h4">
+               Cách Ly Xét Nghiệm : {item.tests&&FORMAT_CURRENT(item.tests)}
               </Typography>
             </CardContent>
           </CardActionArea>

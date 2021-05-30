@@ -6,5 +6,7 @@ export const initialState = {
     dataOption:[]
   },
   country:[],
-  detail:[]
+  detail:[],
+  DATA_VN:[],
+  DATA_ARR_VN:[]
 };
