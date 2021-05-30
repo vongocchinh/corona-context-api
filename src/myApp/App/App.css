@@ -83,6 +83,7 @@
 
 .ld {
     text-align: center;
+    color: white;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -164,13 +165,23 @@
     height: 35px;
     margin-bottom: 10px;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
+    margin-top: 10px;
 }
 
 .option-chart-item {
     width: 200px;
 }
-
+.footer{
+    width: 100%;
+    height: 40px;
+    background-color: #1E2F3A;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display:flex;
+}
 .option-chart select {
     width: 200px;
     height: 30px;
@@ -201,12 +212,12 @@
 
 .vn-container-left {
     width: 300px;
-    height: auto;
+    height: 100%;
 }
 
 .vn-container-right {
     width: 700px;
-    height: auto;
+    height: 100%;
     background-color: #1E2F3A;
     padding: 10px;
 }
@@ -236,6 +247,7 @@
     }
     .vn-container-left {
         width: 100%;
+        height: 100%;
     }
     .vn-container-right {
         width: 100%;
@@ -243,4 +255,9 @@
         background-color: #1E2F3A;
         margin-top: 20px;
     }
+}
+.vn-layout-container{
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
 }

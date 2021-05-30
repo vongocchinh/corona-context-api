@@ -44,12 +44,12 @@ export const Chart = ({getAll, optionCounty, dailyData, country, setOption }) =>
         ],
       }}
     />
-  ) : null;
+  ) : <p className="ld">Đang Chờ Dữ Liệu</p>;
 
   const lineChart2 = optionCounty[0] ? (
     <Line
       data={{
-        labels: optionCounty.map((data) => (new Date(data.Date)).toLocaleString().split(',')[0]),
+        labels: optionCounty.map((data) => (new Date(data.Date)).toLocaleString().split(',')[1]),
         datasets: [
           {
             data: optionCounty.map((data) => data.Confirmed),
@@ -74,10 +74,11 @@ export const Chart = ({getAll, optionCounty, dailyData, country, setOption }) =>
         ],
       }}
     />
-  ) : <p className="ld">Quốc Gia Chưa Có Dữ Liệu</p>;
+  ) : <p className="ld">Đang Chờ Dữ Liệu</p>;
 
   return (
     <div className="chart-container">
+      <h4>Thống Kê Thế Giới</h4>
       <div className="option-chart">
         <select onChange={handleChange}>
           <option value={"1"}>Global</option>
