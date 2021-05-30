@@ -4,7 +4,7 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import { FORMAT_CURRENT } from "./../../constant/corona";
-import { Line } from "react-chartjs-2";
+import { Line, Bar } from "react-chartjs-2";
 export const VietNam = ({ item, arr }) => {
   // console.log(item);
   // console.log(arr);
@@ -43,6 +43,60 @@ export const VietNam = ({ item, arr }) => {
         }}
       />
     ) : null;
+
+  const barChart = item ? (
+    <Bar
+      data={{
+        labels: ["Lây Nhiễm", "Phục Hồi", "Tử Vong"],
+        datasets: [
+          {
+            label: "Thống Kê Chung",
+            backgroundColor: [
+              "#007DF2",
+              "#0ACC0A",
+              "#CC0A0A",
+            ],
+            data: [
+              item.cases && item.cases,
+              item.recovered&&item.recovered,
+              item.deaths && item.deaths,
+            ],
+          },
+        ],
+      }}
+      options={{
+        legend: { display: false },
+        title: { display: true, text: `Current state in Viet Nam` },
+      }}
+    />
+  ) : null;
+  const barChart2 = item ? (
+    <Bar
+      data={{
+        labels: ["Lây Nhiễm", "Phục Hồi", "Tử Vong"],
+        datasets: [
+          {
+            label: "Hôm Nay",
+            backgroundColor: [
+              "#007DF2",
+              "#0ACC0A",
+              "#CC0A0A",
+              
+            ],
+            data: [
+              item.todayCases && item.todayCases,
+              item.todayRecovered&&item.todayRecovered,
+              item.todayDeaths && item.todayDeaths,
+            ],
+          },
+        ],
+      }}
+      options={{
+        legend: { display: false },
+        title: { display: true, text: `Current state in Viet Nam` },
+      }}
+    />
+  ) : null;
   return (
     <div className="vn-layout-container">
       <h4>Thống Kê Việt Nam</h4>
@@ -90,6 +144,14 @@ export const VietNam = ({ item, arr }) => {
           </Card>
         </div>
         <div className="vn-container-right">{lineChart}</div>
+      </div>
+      <div className="bar-chart">
+        <div className="bar-chart-1">
+        {barChart}
+        </div>
+        <div className="bar-chart-2">
+        {barChart2}
+        </div>
       </div>
     </div>
   );
