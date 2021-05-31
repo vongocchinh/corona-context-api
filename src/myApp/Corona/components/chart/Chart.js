@@ -77,7 +77,7 @@ export const Chart = ({getAll, optionCounty, dailyData, country, setOption }) =>
       }}
     />
   ) : <p className="ld">Đang Chờ Dữ Liệu</p>;
-
+  country&&country.sort((a,b)=>(a.Country>b.Country) ? 1 : ((b.Country>a.Country) ?  -1 : 0 ));
   return (
     <div className="chart-container">
       <h4>Thống Kê Thế Giới</h4>
