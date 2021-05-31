@@ -108,7 +108,7 @@
     }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 800px) {
     .container {
         padding-top: 20px;
         margin-left: 5%;
@@ -205,7 +205,7 @@
 
 .vn-container {
     width: 100%;
-    height: auto;
+    height: 370px;
     margin-top: 10px;
     margin-bottom: 10px;
     display: flex;
@@ -228,7 +228,7 @@
 
 .card-app-vn {
     width: 100%;
-    height: auto;
+    height: 100%;
     min-height: 170px;
     border-bottom: 5px solid red;
 }
